@@ -1,7 +1,7 @@
 <?php
     //povezava na bazo
-    $username = 'todo';
-    $password = 'todo';
+    $username = 'root';
+    $password = '';
     $server = 'localhost';
     $database = 'todo';
     //povezava na podatkovno bazo
