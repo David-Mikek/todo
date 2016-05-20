@@ -30,16 +30,19 @@
         ?>
     </select>    
     
+    <br>
     <label id="title">Ime naloge</label>
     <input type="text" name="title" value="<?php echo $task['title']; ?>" />
     
+    <br>
     <label id="description">Opis</label>
-    <textarea name="description" rows="7"><?php echo $task['description']; ?></textarea><br />
+    <textarea name="description" rows="7"><?php echo $task['description']; ?></textarea>
     
+    <br>
     <label id="deadline">Rok opravila</label>
     <input type="date" name="deadline" value="<?php echo date('Y-m-d',strtotime($task['deadline'])); ?>" />
     
-    <br>
+    <br><br>
     <label id="priority">Prioriteta</label>
     <select name="priority">
         <?php
@@ -57,9 +60,9 @@
     <br>
     <label id="state">Stanje</label>
     <select name="state">
-        <option value="izd" selected="selected">V izdelavi</option>
-        <option value="kon">Končan</option>
-        <option value="cak">Čakanje</option>
+        <option value="V_izdelavi">V izdelavi</option>
+        <option value="Končan">Končan</option>
+        <option value="Čakanje">Čakanje</option>
     </select>
     
     <br>
