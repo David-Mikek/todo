@@ -39,6 +39,7 @@
     <label id="deadline">Rok opravila</label>
     <input type="date" name="deadline" value="<?php echo date('Y-m-d',strtotime($task['deadline'])); ?>" />
     
+    <br>
     <label id="priority">Prioriteta</label>
     <select name="priority">
         <?php
@@ -53,6 +54,16 @@
         ?>
     </select>
     
+    <br>
+    <label id="state">Stanje</label>
+    <select name="state">
+        <option value="izd" selected="selected">V izdelavi</option>
+        <option value="kon">Končan</option>
+        <option value="cak">Čakanje</option>
+    </select>
+    
+    <br>
+    <br>
     <input type="submit" value="Potrdi" />
     <input type="reset" value="Prekliči"/>
 </form>
