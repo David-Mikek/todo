@@ -21,13 +21,14 @@
     echo '<p>'.$task['description'].'</p>';
     
     if (($task['date_end'] == '0000-00-00 00:00:00')) {
-        echo '<a href="task_done.php?task_id='.$task_id.'" >Opravil</a>';
+        echo '<a href="task_done.php?task_id='.$task_id.'" >Opravil </a>';
     }
     else {
-        echo '<a href="task_activate.php?task_id='.$task_id.'" >Aktiviraj</a>';
+        echo '<a href="task_activate.php?task_id='.$task_id.'" >Aktiviraj </a>';
     }
-    echo '<a href="task_edit.php?task_id='.$task_id.'" >Uredi</a>';
-    echo ' <a href="task_delete.php?task_id='.$task_id.'" onclick="return confirm(\'Prepričani?\')">Briši</a>';
+    echo '<a href="task_edit.php?task_id='.$task_id.'" > Uredi </a>';
+    echo ' <a href="task_delete.php?task_id='.$task_id.'" onclick="return confirm(\'Prepričani?\')"> Briši </a>';
+    echo '<a href="state.php?task_id='.$task_id.'" > Stanje </a>'; //
     
 ?>
 <hr />
