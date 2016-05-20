@@ -44,10 +44,10 @@
 <a href="state_history.php"> Zgodovina </a>
 
 <?php
-    if(isset($_SESSION['state']))
+    /*if(isset($_SESSION['state']))
     {
         echo $_SESSION['state'];
-    }
+    }*/
     
     $query = "SELECT * FROM files WHERE task_id = $task_id";
     $result = mysqli_query($link, $query);
