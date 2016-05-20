@@ -13,10 +13,10 @@
 <h1>Uredi nalogo</h1>
 
 <form action="task_update.php" method="post">
-    <input type="hidden" name="id" value="<?php echo $task_id;?>" />
+    <!--<input type="hidden" name="id" value="<?php //echo $task_id;?>" />
     <label id="groups">Skupine</label>
     <select name="group_id">
-        <?php
+        <?php/*
             $query = "SELECT * FROM groups ORDER BY title";
             $result = mysqli_query($link, $query);
             while ($row = mysqli_fetch_array($result)) {
@@ -26,47 +26,26 @@
                 else {
                     echo '<option value="'.$row['id'].'">'.$row['title'].'</option>';
                 }
-            }
+            }*/
         ?>
     </select>    
     
-    <br>
     <label id="title">Ime naloge</label>
-    <input type="text" name="title" value="<?php echo $task['title']; ?>" />
+    <input type="text" name="title" value="<?php //echo $task['title']; ?>" />
     
-    <br>
     <label id="description">Opis</label>
-    <textarea name="description" rows="7"><?php echo $task['description']; ?></textarea>
+    <textarea name="description" rows="7"><?php //echo $task['description']; ?></textarea><br />
     
-    <br>
     <label id="deadline">Rok opravila</label>
-    <input type="date" name="deadline" value="<?php echo date('Y-m-d',strtotime($task['deadline'])); ?>" />
+    <input type="date" name="deadline" value="<?php //echo date('Y-m-d',strtotime($task['deadline'])); ?>" />-->
     
-    <br><br>
-    <label id="priority">Prioriteta</label>
-    <select name="priority">
-        <?php
-            for($i=1;$i<11;$i++) {
-                if ($i == $task['priority']) {
-                    echo '<option value="'.$i.'" selected="selected">'.$i.'</option>';
-                }
-                else {
-                    echo '<option value="'.$i.'">'.$i.'</option>';
-                }
-            }
-        ?>
-    </select>
-    
-    <br>
     <label id="state">Stanje</label>
     <select name="state">
-        <option value="V_izdelavi">V izdelavi</option>
-        <option value="Končan">Končan</option>
-        <option value="Čakanje">Čakanje</option>
+        <option value="izd">V izdelavi</option>
+        <option value="kon">Končan</option>
+        <option value="cak">Čakanje</option>
     </select>
     
-    <br>
-    <br>
     <input type="submit" value="Potrdi" />
     <input type="reset" value="Prekliči"/>
 </form>
