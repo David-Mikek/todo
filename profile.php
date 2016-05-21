@@ -18,7 +18,6 @@ include_once './header.php';
     <input type="file" name="fileToUpload" />
     <input type="submit" name="submit" value="Naloži" />
 </form>
-
 <h2>Sporočanje</h2>
 <ul>
     <li><a href="messagenew.php">Novo sporočilo</a></li>
