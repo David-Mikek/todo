@@ -19,6 +19,13 @@
     echo '<h4>'.$task['gtitle'].'</h4>';
     echo '<h2>'.$task['priority'].'</h2>';
     echo '<p>'.$task['description'].'</p>';
+    echo 'Naloga: ';
+    if(isset($_SESSION['state']))
+    {
+        echo $_SESSION['state'];
+        echo '<br>';
+        echo '<br>';
+    }
     
     if (($task['date_end'] == '0000-00-00 00:00:00')) {
         echo '<a href="task_done.php?task_id='.$task_id.'" >Opravil </a>';
@@ -31,6 +38,14 @@
     //echo '<a href="state.php?task_id='.$task_id.'" > Stanje </a>'; //
     
 ?>
+<br>
+<br>
+<form action="state_history.php" method="post">
+    <input type="hidden" name="task_id" value="<?php echo "$task_id";?>">
+    <input type="submit" value="Zgodovina stanj naloge" />
+</form>
+<a href="state_history.php"> Zgodovina stanj naloge</a>
+<br>
 <hr />
 <h3>Datoteke</h3>
 <form action="file_upload.php" method="post" enctype="multipart/form-data">
@@ -41,14 +56,9 @@
     <input type="submit" name="submit" value="Naloži" />
 </form>
 
-<a href="state_history.php"> Zgodovina </a>
 
-<?php
-    /*if(isset($_SESSION['state']))
-    {
-        echo $_SESSION['state'];
-    }*/
-    
+
+<?php 
     $query = "SELECT * FROM files WHERE task_id = $task_id";
     $result = mysqli_query($link, $query);
     echo '<ol>';
