@@ -40,6 +40,10 @@
 ?>
 <br>
 <br>
+<form action="state_history.php" method="post">
+    <input type="hidden" name="task_id" value="<?php echo "$task_id";?>">
+    <input type="submit" value="Zgodovina stanj naloge" />
+</form>
 <a href="state_history.php"> Zgodovina stanj naloge</a>
 <br>
 <hr />
