@@ -19,6 +19,13 @@ include_once './header.php';
     <input type="submit" name="submit" value="Naloži" />
 </form>
 
+<h2>Sporočanje</h2>
+<ul>
+    <li><a href="messagenew.php">Novo sporočilo</a></li>
+    <li><a href=""></a></li>
+    <li><a href=""></a></li>
+</ul>
+
 <?php
 include_once './footer.php';
 ?>
