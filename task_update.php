@@ -30,7 +30,7 @@
         
         $query2 = "INSERT INTO `history` (`id`, `state`, `task_id`) "
             . "VALUES (NULL,'".$state."','".$id."');";
-        
+        //vidim da spremba na githubu
         mysqli_query($link, $query2);
         
         header("Location:task.php?task_id=$id");
