@@ -3,24 +3,20 @@
     include_once './database.php';
     
     $user_id = $_SESSION['user_id'];
+    $task_id = $_POST["task_id"];
     
     
 ?>
 <hr />
-<h3>Zgodovina</h3>
+<h3>Zgodovina:</h3>
 
 <?php
-    $query="SELECT * "
+    $query="SELECT h.state "
             . "FROM history h INNER JOIN "
             . "tasks t ON t.id=h.task_id "
-            . "WHERE h.task_id=t.id";
+            . "WHERE h.task_id=$task_id";
     
     $result = mysqli_query($link, $query);
-
-    /*if(isset($_SESSION['state']))
-    {
-        echo $_SESSION['state'];
-    }*/
     
     echo '<ol>';
     while ($row = mysqli_fetch_array($result)) 
@@ -28,7 +24,7 @@
         echo '<li>';
         echo $row['state'];
         echo '<br>';
-        echo $row['task_id'];
+        //echo $row['task_id'];
         echo '</li>';
     }
     echo '</ol>';
