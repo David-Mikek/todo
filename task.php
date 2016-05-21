@@ -19,13 +19,13 @@
     echo '<h4>'.$task['gtitle'].'</h4>';
     echo '<h2>'.$task['priority'].'</h2>';
     echo '<p>'.$task['description'].'</p>';
-    echo 'Naloga: ';
+    /*echo 'Naloga: ';
     if(isset($_SESSION['state']))
     {
         echo $_SESSION['state'];
         echo '<br>';
         echo '<br>';
-    }
+    }*/
     
     if (($task['date_end'] == '0000-00-00 00:00:00')) {
         echo '<a href="task_done.php?task_id='.$task_id.'" >Opravil </a>';
@@ -44,8 +44,8 @@
     <input type="hidden" name="task_id" value="<?php echo "$task_id";?>">
     <input type="submit" value="Zgodovina stanj naloge" />
 </form>
-<a href="state_history.php"> Zgodovina stanj naloge</a>
-<br>
+<!--<a href="state_history.php"> Zgodovina stanj naloge</a>
+<br>-->
 <hr />
 <h3>Datoteke</h3>
 <form action="file_upload.php" method="post" enctype="multipart/form-data">

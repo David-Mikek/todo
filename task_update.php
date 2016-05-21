@@ -15,7 +15,7 @@
     
     if ((!empty($title))&&(!empty($group_id))&&(!empty($priority))){
         
-        $_SESSION['state']=$state;
+        //$_SESSION['state']=$state;
         
         $query = sprintf("UPDATE tasks SET title = '%s', description='%s',"
                 . "                      deadline='%s', priority = $priority,"
@@ -28,9 +28,11 @@
         
         mysqli_query($link, $query);
         
-        $query2 = "INSERT INTO `history` (`id`, `state`, `task_id`) "
-            . "VALUES (NULL,'".$state."','".$id."');";
-        //vidim da spremba na githubu
+        $date_z=date("Y-m-d");
+        
+        $query2 = "INSERT INTO `history` (`id`, `state`, `task_id`, `date_z`) "
+            . "VALUES (NULL,'".$state."','".$id."','".$date_z."');";
+        
         mysqli_query($link, $query2);
         
         header("Location:task.php?task_id=$id");

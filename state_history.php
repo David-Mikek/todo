@@ -8,10 +8,10 @@
     
 ?>
 <hr />
-<h3>Zgodovina:</h3>
+<h3>Naloga je:</h3>
 
 <?php
-    $query="SELECT h.state "
+    $query="SELECT h.state, h.date_z "
             . "FROM history h INNER JOIN "
             . "tasks t ON t.id=h.task_id "
             . "WHERE h.task_id=$task_id";
@@ -22,7 +22,12 @@
     while ($row = mysqli_fetch_array($result)) 
     {
         echo '<li>';
+        echo '<h4>';
         echo $row['state'];
+        echo '</h4>';
+        echo '<h5>';
+        echo $row['date_z'];
+        echo '</h5>';
         echo '<br>';
         //echo $row['task_id'];
         echo '</li>';
