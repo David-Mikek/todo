@@ -14,7 +14,7 @@
     
     $date_add = date("Y-m-d H:i:s");
     
-    echo $date_add;
+    //echo $date_add;
     
     if ((!empty($title))&&(!empty($group_id))&&(!empty($priority))){
                 
@@ -29,22 +29,22 @@
         
         mysqli_query($link, $query);
         
-        $date_z=date("Y-m-d");
+        /*$date_z=date("Y-m-d");
         
-        $query_task_id="SELECT t.id "
-                . "FROM tasks t "
-                . "WHERE t.date_add=$date_add;";
+        $query_task_id="SELECT tasks.id AS memTotal"
+                . "FROM tasks "
+                . "WHERE tasks.date_add=$date_add;";
         
         $task_id=mysqli_query($link, $query_task_id);
         
-        echo "id task: $task_id";
+        echo $task_id->fetch_object()->memTotal;
         
         $query2 = "INSERT INTO `history` (`id`, `state`, `task_id`, `date_z`) "
             . "VALUES (NULL,'V čakanju','".$task_id."','".$date_z."');";
         
-        mysqli_query($link, $query2);
+        mysqli_query($link, $query2);*/
         
-        //header("Location:tasks.php");
+        header("Location:tasks.php");
     }
 
 ?>
