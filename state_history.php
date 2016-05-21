@@ -18,7 +18,19 @@
     
     $result = mysqli_query($link, $query);
     
+    /*$query2="SELECT t.date_add "
+            . "FROM tasks t "
+            . "WHERE t.id=$task_id;";
+    
+    $date_add = mysqli_query($link, $query2);
+    
     echo '<ol>';
+        echo '<li>';
+        echo '<h4>';
+        echo 'V čakanju';
+        echo '</h4>';
+        //echo $date_add;
+        echo '</li>';*/
     while ($row = mysqli_fetch_array($result)) 
     {
         echo '<li>';

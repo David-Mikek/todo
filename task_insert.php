@@ -12,7 +12,7 @@
     
     $user_id = $_SESSION['user_id'];
     
-    $date_add = date("Y-m-d H:i:s");
+    //$date_add = date("Y-m-d");
     
     //echo $date_add;
     
@@ -31,7 +31,7 @@
         
         /*$date_z=date("Y-m-d");
         
-        $query_task_id="SELECT tasks.id AS memTotal"
+        $query_task_id="SELECT tasks.id AS memTotal "
                 . "FROM tasks "
                 . "WHERE tasks.date_add=$date_add;";
         
