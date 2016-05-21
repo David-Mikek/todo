@@ -21,7 +21,7 @@ include_once './header.php';
 <h2>Sporočanje</h2>
 <ul>
     <li><a href="messagenew.php">Novo sporočilo</a></li>
-    <li><a href=""></a></li>
+    <li><a href="messagebox.php">Prejeta sporočila</a></li>
     <li><a href=""></a></li>
 </ul>
 
