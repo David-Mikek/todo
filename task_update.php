@@ -15,7 +15,7 @@
     
     if ((!empty($title))&&(!empty($group_id))&&(!empty($priority))){
         
-        //$_SESSION['state']=$state;
+        $_SESSION['state']=$state;
         
         $query = sprintf("UPDATE tasks SET title = '%s', description='%s',"
                 . "                      deadline='%s', priority = $priority,"

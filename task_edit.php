@@ -58,11 +58,11 @@
     </select>
     
     <br>
-    <label id="state">Stanje</label>
+    <label id="state">Stanje naloge</label>
     <select name="state">
         <option value="V izdelavi">V izdelavi</option>
-        <option value="Končan">Končan</option>
-        <option value="Čakanje">Čakanje</option>
+        <option value="Končana">Končana</option>
+        <option value="V čakanju">V čakanju</option>
     </select>
     
     <br>
