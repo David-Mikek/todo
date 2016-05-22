@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Gostitelj: 127.0.0.1
--- Čas nastanka: 21. maj 2016 ob 17.32
--- Različica strežnika: 10.1.9-MariaDB
--- Različica PHP: 5.6.15
+-- Čas nastanka: 22. maj 2016 ob 20.17
+-- Različica strežnika: 10.1.8-MariaDB
+-- Različica PHP: 5.6.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -100,6 +100,29 @@ INSERT INTO `history` (`id`, `state`, `task_id`, `date_z`) VALUES
 (41, 'V čakanju', 0, '2016-05-21'),
 (42, 'V čakanju', 0, '2016-05-21'),
 (43, 'V čakanju', 0, '2016-05-21');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabele `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL,
+  `idsend` int(11) NOT NULL,
+  `idget` int(11) NOT NULL,
+  `title` varchar(30) COLLATE utf8mb4_slovenian_ci NOT NULL,
+  `body` varchar(500) COLLATE utf8mb4_slovenian_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_slovenian_ci;
+
+--
+-- Odloži podatke za tabelo `messages`
+--
+
+INSERT INTO `messages` (`id`, `idsend`, `idget`, `title`, `body`) VALUES
+(1, 7, 9, 'Zdravo', 'pa adijo,pa hvala lepa'),
+(2, 8, 7, 'Zaprobo', 'umetno vstavljeno sporočilo'),
+(3, 7, 9, 'Helmut Hebl', 'Zaigra na vse ,še na lijak');
 
 -- --------------------------------------------------------
 
@@ -218,7 +241,8 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `pass`, `avatar`,
 (5, 'Uroš', 'Sonjak', 'uros.sonjak@scv.si', '42c307afa56045e46cefe9dcd45d01df29f8801f', NULL, 0),
 (6, 'Robi', 'Pritržnik', 'robi@pritrznik.si', 'd992567841d2c92e7f15845d731e4ba35c525a2f', 'uploads/avatars/6-20160329172802000000-Chrysanthemum.jpg', 0),
 (7, 'Jan', 'Žagar', 'jan.zagar98@gmail.com', 'f14bfc9b57fd9f3159e527f2444c8584d1849b79', NULL, 0),
-(8, 'Janez', 'Žagarič', 'zombie.behind.me@gmail.com', 'f14bfc9b57fd9f3159e527f2444c8584d1849b79', NULL, 0);
+(8, 'Janez', 'Žagarič', 'zombie.behind.me@gmail.com', 'f14bfc9b57fd9f3159e527f2444c8584d1849b79', NULL, 0),
+(9, 'Ime', 'Priimek', 'test.poskus@gmail.com', 'test', NULL, 0);
 
 --
 -- Indeksi zavrženih tabel
@@ -241,6 +265,12 @@ ALTER TABLE `groups`
 -- Indeksi tabele `history`
 --
 ALTER TABLE `history`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeksi tabele `messages`
+--
+ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -293,6 +323,11 @@ ALTER TABLE `groups`
 ALTER TABLE `history`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 --
+-- AUTO_INCREMENT tabele `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT tabele `tasks`
 --
 ALTER TABLE `tasks`
@@ -311,7 +346,7 @@ ALTER TABLE `teams_users`
 -- AUTO_INCREMENT tabele `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
