@@ -7,7 +7,7 @@ $ids = $_GET['ids'];
 $branje ="SELECT title,body FROM messages WHERE id = '".$ids."' ";
 $izpis = mysqli_query($link, $branje);
 while ($row = mysqli_fetch_array($izpis)) {
-    echo $row['title']."<br>". $row['body'];
+    echo "<h2>".$row['title']."</h2><br>". $row['body'];
 }
-
+echo "<br><a href = 'profile.php'>Nazaj</a>";
 include_once './footer.php';

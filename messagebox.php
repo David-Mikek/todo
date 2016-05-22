@@ -17,7 +17,8 @@ while ($row = mysqli_fetch_array($list)) {
         $posil="$row2[first_name]  $row2[last_name]";
     }
     echo "<tr><td>".$row['title']."</td><td>".$posil.'</td><td><a href ="messageread.php?ids='.$row[0].'">Preberi</a></td></tr>';
-    echo"$row[0]";
+    
 }
 echo "</table>";
+echo "<a href = 'profile.php'>Nazaj</a>";
 include_once './footer.php';

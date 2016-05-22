@@ -22,7 +22,7 @@ include_once './header.php';
 <ul>
     <li><a href="messagenew.php">Novo sporočilo</a></li>
     <li><a href="messagebox.php">Prejeta sporočila</a></li>
-    <li><a href=""></a></li>
+    <li><a href="messagesendbox.php">Poslana sporočila</a></li>
 </ul>
 
 <?php

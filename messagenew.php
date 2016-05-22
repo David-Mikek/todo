@@ -13,7 +13,7 @@ include_once './header.php';
  <textarea name = "msporocilo" cols="50" rows="10" required="required"></textarea> 
 <input type="submit" value="Pošlji" />  
 </form>
-
+<a href = 'profile.php'>Prekliči</a>
 
 <?php
 include_once './footer.php';
